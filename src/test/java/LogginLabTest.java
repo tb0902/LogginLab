@@ -1,3 +1,5 @@
+import org.junit.Test;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -23,11 +25,26 @@ public class LogginLabTest {
 
         for (Integer i = 1; i <= finalLimit; i++) {
             if (lab.thresholdExceeds(i)) {
-                logger.log(Level.INFO, "Threshold not reached! It is "+i);
+                logger.log(Level.INFO, "Threshold not reached! It is " + i);
                 assertTrue(lab.thresholdExceeds(i));
             } else {
                 logger.log(Level.INFO, "Threshold finally reached!");
                 assertFalse(lab.thresholdExceeds(i));
+            }
+        }
+        public void thresholdReached() {
+            Integer finalThreshold = 5;
+
+            LogginLab lab2 = new LogginLab();
+            lab.setThreshold(finalThreshold);
+
+            for (Integer i = 1; i <= finalThreshold; i++) {
+                if (lab.thresholdReached(i)) {
+                    logger.log(Level.INFO, "Idk if this works!" + i);
+                } else {
+                    logger.log(Level.INFO, "Still not sure!" + i);
+                    assertFalse(lab.thresholdExceeds(i));
+                }
             }
         }
     }
