@@ -45,7 +45,7 @@ public class LogginLabTest {
                     logger.log(Level.INFO, "Idk if this works!" + i);
                 } else {
                     logger.log(Level.INFO, "Still not sure!" + i);
-                    assertFalse(lab.thresholdExceeds(i));
+                    assertFalse(lab.thresholdReached(i));
                 }
             }
         }
