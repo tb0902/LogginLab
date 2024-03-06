@@ -32,10 +32,12 @@ public class LogginLabTest {
                 assertFalse(lab.thresholdExceeds(i));
             }
         }
+    }
+        @org.junit.Test
         public void thresholdReached() {
             Integer finalThreshold = 5;
 
-            LogginLab lab2 = new LogginLab();
+            LogginLab lab = new LogginLab();
             lab.setThreshold(finalThreshold);
 
             for (Integer i = 1; i <= finalThreshold; i++) {
@@ -48,4 +50,3 @@ public class LogginLabTest {
             }
         }
     }
-}
