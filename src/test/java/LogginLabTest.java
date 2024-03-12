@@ -42,9 +42,9 @@ public class LogginLabTest {
 
             for (Integer i = 1; i <= finalThreshold; i++) {
                 if (lab.thresholdReached(i)) {
-                    logger.log(Level.INFO, "Idk if this works!" + i);
+                    logger.log(Level.INFO, "Limit not reached. It is" + i);
                 } else {
-                    logger.log(Level.INFO, "Still not sure!" + i);
+                    logger.log(Level.INFO, "Limit reached." + i);
                     assertFalse(lab.thresholdReached(i));
                 }
             }
